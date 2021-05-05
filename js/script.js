@@ -28,6 +28,10 @@ const app = new Vue({
       if (this.contatoreImg === this.ricercaImg.length) {
         this.contatoreImg = 0;
       }
+    },
+    
+    carouselAuto() {
+      setInterval(this.nextImg, 3000);
     }
 
   }
