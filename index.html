@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' integrity='sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==' crossorigin='anonymous'/>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Vue Slider</title>
+</head>
+<body>
+
+
+  <!-- app - container -->
+  <div id="app" class="container">
+
+    <!-- slide-wrapper -->
+    <div class="slide-wrapper">
+
+      <h1>Carousel Paesaggi</h1>
+      
+      <!-- img-carousel -->
+      <div class="img-carousel">
+
+        <!-- freccia prev -->
+        <i @click="prevImg" class="fas fa-chevron-left prev"></i>
+
+        <img :src="ricercaImg[contatoreImg]" alt="slider">
+
+        <!-- nav-cerchi con ciclo-for -->
+        <div class="nav-circle">
+          <i v-for="(circles, index) in ricercaImg"
+           :class="(index === contatoreImg) ? 'active' : null" @click="contatoreImg = index" 
+           class="fas fa-circle"></i>
+        </div>
+        <!-- /nav-cerchi con ciclo-for -->
+
+        <!-- freccia next -->
+        <i @click="nextImg" class="fas fa-chevron-right next"></i>
+
+      </div> 
+      <!-- /img-carousel -->
+
+    </div> 
+    <!-- /slide-wrapper -->
+
+
+  </div>
+  <!-- /app - container -->
+  
+ 
+  <script src="js/script.js"></script>
+</body>
+</html>
